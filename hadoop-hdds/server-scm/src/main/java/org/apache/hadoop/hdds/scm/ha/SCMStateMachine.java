@@ -155,8 +155,10 @@ public class SCMStateMachine extends BaseStateMachine {
           .invoke(handler, request.getArguments());
       return SCMRatisResponse.encode(result);
     } catch (NoSuchMethodException | SecurityException ex) {
+      LOG.error( "Foud exception:", ex);
       throw new InvalidProtocolBufferException(ex.getMessage());
     } catch (InvocationTargetException e) {
+      LOG.error( "Foud exception:", e);
       final Exception targetEx = (Exception) e.getTargetException();
       throw targetEx != null ? targetEx : e;
     }
