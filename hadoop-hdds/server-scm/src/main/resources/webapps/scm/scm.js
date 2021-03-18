@@ -22,7 +22,8 @@
     angular.module('scm').component('scmOverview', {
         templateUrl: 'scm-overview.html',
         require: {
-            overview: "^overview"
+            overview: "^overview",
+            raft: "^raft"
         },
         controller: function ($http) {
             var ctrl = this;
