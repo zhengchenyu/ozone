@@ -64,6 +64,17 @@
         })
     }
   });
+  angular.module('ozone').component('raft', {
+    templateUrl: 'static/templates/raft.html',
+    transclude: true,
+    controller: function($http) {
+      var ctrl = this;
+      $http.get("jmx?qry=Ratis:service=RaftServer,group=*,id=*")
+      .then(function(result) {
+        ctrl.jmx = result.data.beans[0]
+      })
+    }
+  });
 
   angular.module('ozone').component('rpcMetrics', {
     template: '<h1>Rpc metrics</h1><tabs>' +
