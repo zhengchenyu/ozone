@@ -111,8 +111,7 @@
     angular.module('ozoneManager').component('omOverview', {
         templateUrl: 'om-overview.html',
         require: {
-            overview: "^overview",
-            raft: "^raft"
+            overview: "^overview"
         },
     });
 })();
